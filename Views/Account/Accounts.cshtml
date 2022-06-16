@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Everlast.Models.Account>
+
+@{
+    ViewBag.Title = "Accounts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Accounts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-outline-dark" })
+    @Html.ActionLink("Dashboard", "Home", null, new { @class = "btn btn-sm btn-outline-dark" })
+</p>
+
+<div id="pvAccounts"></div>
+<div id="pvDeleteAccount"></div>
+
+@section scripts {
+
+    <script type="text/javascript">
+
+        $(document).ready(() => LoadAccounts());
+
+        function onClickRequestDeleteAccountView(accountGuid) {
+            let data = { "accountGuid": accountGuid };
+            Everlast.Request.ViewData('@Url.Action("Delete", "Account")', "pvDeleteAccount", data);
+            $("#modalDeleteAccount").modal('show');
+        }
+
+        function LoadAccounts() {
+            Everlast.Request.ViewData('@Url.Action("GetAccounts", "Account")', "pvAccounts", null);
+        }
+
+    </script>
+
+}
+
+

@@ -1,0 +1,93 @@
+﻿@model Everlast.Models.Party
+
+@{
+    ViewBag.Title = "Read";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Read</h2>
+
+<div>
+    <h4>Party</h4>
+    <hr />
+    <dl class="dl-horizontal">
+      
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartyStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartyStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartyEnd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartyEnd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Postal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Postal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Update", new { partyGuid = Model.PartyGuid }) |
+    @Html.ActionLink("Delete", "Delete", new { partyGuid = Model.PartyGuid }) |
+    @Html.ActionLink("Back to List", "Parties")
+</p>

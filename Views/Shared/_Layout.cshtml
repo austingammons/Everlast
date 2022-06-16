@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - EA</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="v-loader-overlay" id="dvLoading">
+        <div class="v-loader-text">
+            Loading...
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light v-custom-nav v-box-shadow">
+        <button class="navbar-toggler v-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            @*<span class="navbar-toggler-icon"></span>*@
+            <span>Menu</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav v-navbar">
+                <li class="nav-item v-nav-item">
+                    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link v-nav-link" })
+                </li>
+                <li class="nav-item v-nav-item">
+                    @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link v-nav-link" })
+                </li>
+                <li class="nav-item v-nav-item">
+                    @Html.ActionLink("Services", "Services", "Home", null, new { @class = "nav-link v-nav-link" })
+                </li>
+                <li class="nav-item v-nav-item">
+                    @Html.ActionLink("Events", "Events", "Home", null, new { @class = "nav-link v-nav-link" })
+                </li>
+                <li class="nav-item v-nav-item">
+                    @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link v-nav-link" })
+                </li>
+                <li class="nav-item v-nav-item">
+                    @Html.ActionLink("Gallery", "Gallery", "Home", null, new { @class = "nav-link v-nav-link" })
+                </li>
+                <li class="nav-item v-nav-item">
+                    @if (System.Web.HttpContext.Current.Session["AccountGuid"] != null && (int)System.Web.HttpContext.Current.Session["AccountType"] != (int)Everlast.enums.AccountTypes.Guest)
+                    {
+                        @Html.ActionLink("Account", "Home", "Account", new { accountGuid = (Guid)System.Web.HttpContext.Current.Session["AccountGuid"] }, new { @class = "nav-link v-nav-link" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Members", "Members", "Home", null, new { @class = "nav-link v-nav-link" })
+                    }
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="NotificationCenter" id="dvNotificationCenter"></div>
+
+    <div id="dvMainBody" class="container-fluid body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            @{
+
+                Html.RenderPartial("_Footer");
+            }
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+
+        // onReadt
+        $(document).ready(function () {
+
+        });
+
+
+    </script>
+
+</body>
+</html>

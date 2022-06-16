@@ -1,0 +1,39 @@
+﻿@model List<Everlast.Models.Party>
+
+<div class="v-slim-section bg-teal">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="v-header">Events</h2>
+            <blockquote class="blockquote">
+                <p class="mb-0">
+                    Join the fun!
+                </p>
+            </blockquote>
+        </div>
+    </div>
+</div>
+
+@foreach (Everlast.Models.Party item in Model)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card v-card text-center">
+                <div class="card-header">
+                    @item.Title
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @item.Price
+                    </h5>
+                    <p class="card-text">
+                        @item.Description
+                    </p>
+                    @Html.ActionLink("Join", "Create", "Attendee", new { partyGuid = item.PartyGuid }, new { @class = "btn btn-outline-dark" })
+                </div>
+                <div class="card-footer text-muted">
+                    @item.PartyStart.ToShortDateString()
+                </div>
+            </div>
+        </div>
+    </div>
+}

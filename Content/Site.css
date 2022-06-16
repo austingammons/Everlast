@@ -1,0 +1,571 @@
+﻿body {
+    padding-top: 60px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+* {
+    /*border: 1px solid red;*/
+}
+
+footer {
+    background-color: #2e2e2e;
+    color: white;
+    padding: 10px;
+}
+
+/*font family*/
+@font-face {
+    font-family: 'Honey';
+    src: url("/fonts/HelloHoneyPersonalUse-2OEo8.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Housttely';
+    src: url("/fonts/HousttelySignature-qZo4r.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BrnKos';
+    src: url("/fonts/BryanKhostang-Y7Bj.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DancySript';
+    src: url("/fonts/DancingScript-3j68.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DancyScriptOT';
+    src: url("/fonts/Dancingscriptot-83xA.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Katroll';
+    src: url("/fonts/KatrineHolland-XjRG.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montezzy';
+    src: url("/fonts/Montez-0jZz.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roomood';
+    src: url("/fonts/RomateHood-p73Ed.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Wrexamscri';
+    src: url("/fonts/WrexhamScript-1nm0.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WrexamscriSun';
+    src: url("/fonts/WrexhamScriptLight-R0oV.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*font family*/
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*begin custom css*/
+
+.NotificationCenter {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    z-index: 1000;
+    margin: 0px 25px 0px 0px;
+    display: none;
+}
+
+.Notification {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0px;
+    background-color: darkseagreen;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.v-loader-overlay {
+    z-index: 1000;
+    background-color: gray;
+    opacity: .8;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: none;
+}
+
+.v-loader-text {
+    margin: 0 auto;
+    position: relative;
+    top: 45%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 2em;
+    text-align: center;
+}
+
+.v-text-area {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 600px;
+    min-height: 100px;
+}
+
+.v-truncate {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 200px;
+    overflow: hidden;
+    display: block;
+}
+
+.remove-pad {
+    padding: 0px;
+}
+
+.v-navbar-transparent {
+    background-color: transparent;
+}
+
+.v-side-nav {
+    list-style: none;
+    padding-left: 0;
+}
+
+.v-side-nav-item {
+}
+
+    .v-side-nav-item:hover {
+        border: 1px solid gray;
+        box-shadow: 1px 1px 5px -1px black;
+    }
+
+.landing {
+    background-color: wheat;
+}
+
+.landing-bg {
+    background-image: url(../img/image102.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.outer-table {
+    overflow-y: auto;
+    height: 350px;
+}
+
+    .outer-table table {
+        width: 100%;
+        table-layout: fixed;
+        border: 1px solid black;
+        border-spacing: 1px;
+    }
+
+        .outer-table table th {
+            text-align: left;
+            top: 0;
+            position: sticky;
+        }
+
+.v-cut {
+    position: relative;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 6px;
+    height: 100px;
+    width: 100%;
+}
+
+    .v-cut:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background: #eeeeee;
+        transform: skew(0deg, 8deg);
+        box-shadow: 5px 10px 20px #888888;
+    }
+
+.v-cover-section {
+    height: 100vh;
+}
+
+.v-cover-image {
+    background: url(/img/image102.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.v-custom-nav {
+    opacity: .8;
+}
+
+.v-wheat-bg {
+    background-color: wheat;
+    opacity: .8;
+}
+
+.v-label-button {
+    margin-top: 38px;
+}
+
+.jumbotron-slim {
+    padding: 15px !important;
+}
+
+.v-cover-section-content {
+    margin: 0;
+    position: relative;
+    top: 45%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.v-header {
+    font-weight: 300;
+    font-family: 'BrnKos';
+}
+
+.v-section {
+    width: 100%;
+    height: 100vh;
+}
+
+.v-auto-section {
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+}
+
+.v-slim-section {
+    height: auto;
+    width: 100%;
+    padding: 50px;
+}
+
+.v-block-corner {
+    width: 50%;
+    height: 50vh;
+}
+
+.v-block-side-half {
+    width: 50%;
+    height: 100vh;
+}
+
+.v-center {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.v-textarea {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 150px;
+    min-height: 150px;
+}
+
+.v-group-text {
+    min-width: 100px;
+}
+
+.v-navbar {
+    margin: 0;
+    width: 100%;
+}
+
+.v-nav-item {
+    width: 25%;
+    text-align: center;
+    font-size: 20px;
+}
+
+    .v-nav-item:hover {
+        box-shadow: 1px 1px 5px -1px black;
+        /*border-radius: 60px;*/
+    }
+
+.v-card {
+    margin-bottom: 35px;
+}
+
+.v-center {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.v-sock {
+    height: 50vh;
+    /*border: 1px solid black;*/
+    box-shadow: 1px 1px 5px -1px black;
+    width: 30%;
+    display: inline-block;
+    position: relative;
+    background-color: white;
+    padding: 40px;
+}
+
+.v-sock-left {
+    top: -50px;
+}
+
+.v-sock-center {
+    top: 0px;
+}
+
+.v-sock-right {
+    top: 50px;
+}
+
+.team-photo-scope {
+    /*border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;*/
+    max-height: 369px;
+    min-height: 250px;
+    height: auto;
+}
+
+.chevron-divider {
+    position: relative;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 6px;
+    height: 100px;
+    width: 100%;
+}
+
+    .chevron-divider:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 50%;
+        background: #eeeeee;
+        transform: skew(0deg, 6deg);
+        box-shadow: 5px 10px 20px #888888;
+    }
+
+    .chevron-divider:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+        background: #eeeeee;
+        transform: skew(0deg, -6deg);
+        box-shadow: 5px 10px 20px #888888;
+    }
+
+.form-control {
+    min-width: 100%;
+}
+
+.v-toggler {
+    width: 100%;
+}
+
+.v-extend-section {
+    height: 150vh;
+}
+
+.dashbox {
+    display: block;
+    border: 1px solid gray;
+}
+
+@media (min-width: 992px) {
+    .v-center {
+        width: 25%;
+        max-width: 25%;
+        margin: 0 auto;
+    }
+
+    .v-sock {
+        height: 50vh;
+        /*border: 1px solid black;*/
+        box-shadow: 1px 1px 5px -1px black;
+        width: 30%;
+        display: inline-block;
+        position: relative;
+        background-color: white;
+        padding: 40px;
+        margin: 0px 10px 0px 10px;
+    }
+}
+
+@media(max-width: 991px) {
+    .v-center {
+        width: 50%;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
+    .v-nav-item {
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .v-custom-nav {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .v-center {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .v-sock {
+        height: auto;
+        border: 1px solid black;
+        box-shadow: 1px 1px 5px -1px black;
+        width: 100%;
+        display: block;
+        position: relative;
+    }
+
+
+    .v-nav-item {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .v-navbar {
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .v-custom-nav {
+        opacity: 1;
+    }
+
+    .v-nav-link {
+        border-bottom: 2px solid gainsboro;
+    }
+}
+
+/*
+    begin colors
+*/
+.bg-teal {
+    background-color: #008080;
+    color: #FFF;
+}
+
+.text-teal {
+    color: #008080;
+}
+
+.border-teal {
+    border: 1px solid #008080;
+}
+
+.bg-white {
+    background-color: #FFF;
+}
+
+.text-white {
+    color: #FFF;
+}
+
+.border-white {
+    border: 1px solid #FFF;
+}
+
+.bg-black {
+    background-color: #000;
+    color: #FFF;
+}
+
+.text-black {
+    color: #000;
+}
+
+.border-black {
+    border: 1px solid #000;
+}
+
+.bg-gold {
+    background-color: #ffd700;
+}
+
+.text-gold {
+    color: #ffd700;
+}
+
+.border-gold {
+    border: 1px solid #ffd700;
+}
+
+.bg-metallic-gold {
+    background: linear-gradient( 0.33turn, #3f87a6, #ebf8e1, #f69d3c, #561423);
+}
+
+.bg-splice-teal-gold {
+    background-color: #008080;
+    background-image: linear-gradient(135deg, #ffd700 25%, transparent 25%);
+}
+
+.bg-gold-wave {
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+}

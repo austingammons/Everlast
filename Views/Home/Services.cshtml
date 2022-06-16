@@ -1,0 +1,44 @@
+﻿@model List<Everlast.Models.Service>
+@{
+    ViewBag.Title = "Services";
+}
+
+<div class="v-slim-section bg-teal">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="v-header">Services</h2>
+            <blockquote class="blockquote">
+                <p class="mb-0">
+                    Find your very own Everlasting Aesthetic service below.
+                </p>
+            </blockquote>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    @foreach (Everlast.Models.Service item in Model)
+    {
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card v-card text-center">
+                <div class="card-header">
+                    @item.Title
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @item.Price
+                    </h5>
+                    <p class="card-text">
+                        @item.Description
+                    </p>
+                    @Html.ActionLink("Book", "VerifyAccountForAppointment", "Appointment", new { serviceGuid = item.ServiceGuid }, new { @class = "btn btn-outline-dark btn-lg btn-block" })
+                </div>
+                <div class="card-footer text-muted">
+                    @item.Hours Hours and @item.Minutes Minutes
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

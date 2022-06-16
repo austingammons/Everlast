@@ -1,0 +1,86 @@
+﻿@model Everlast.Models.Account
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.HiddenFor(model => model.AccountGuid)
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="jumbotron jumbotron-slim">
+                <ul class="v-side-nav">
+                    @if ((int)System.Web.HttpContext.Current.Session["AccountType"] == (int)Everlast.enums.AccountTypes.Administrator)
+                    {
+                        <li class="v-side-nav-item">
+                            @Html.ActionLink("Accounts", "Accounts", "Account", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="v-side-nav-item">
+                            @Html.ActionLink("Appointments", "Appointments", "Appointment", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="v-side-nav-item">
+                            @Html.ActionLink("Services", "Services", "Service", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="v-side-nav-item">
+                            @Html.ActionLink("Service Types", "ServiceTypes", "ServiceType", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="v-side-nav-item">
+                            @Html.ActionLink("Events", "Parties", "Party", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="v-side-nav-item">
+                            @Html.ActionLink("Availability", "Periods", "Period", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="v-side-nav-item">
+                            @Html.ActionLink("Treatments", "Treatments", "Treatment", null, new { @class = "nav-link" })
+                        </li>
+                    }
+                    <li class="v-side-nav-item">
+                        @Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="v-side-nav-item">
+                        @Html.ActionLink("Edit Account", "Update", new { accountGuid = Model.AccountGuid }, new { @class = "nav-link" })
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="jumbotron jumbotron-slim">
+
+                Load a partial view to display information based on account type.
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts {
+
+    <script type="text/javascript">
+
+        // ready
+        $(document).ready(function () {
+            //
+        });
+
+        // events
+
+        // functions
+        function GetNextAppointment() {
+            //
+        }
+
+        function GetNextEvent() {
+            //
+        }
+
+        function GetCurrentWorkPeriod() {
+
+        }
+
+    </script>
+
+}
+
